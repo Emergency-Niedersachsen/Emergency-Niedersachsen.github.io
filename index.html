@@ -1,136 +1,307 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergency Niedersachsen – Roblox RP</title>
+  <title>Emergency Niedersachsen Support</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #121212;
-      color: #fff;
+      background: linear-gradient(135deg, #1F2937, #111827);
+      color: white;
+      font-family: 'Poppins', sans-serif;
     }
 
-    header {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    main {
-      padding: 2rem;
-      background: #181818;
-      text-align: center;
-    }
-
-    main h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    main p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    #sneakpeek {
-      padding: 2rem;
-      text-align: center;
-      background: #1e1e1e;
-    }
-
-    #sneakpeek h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .gallery img {
-      width: 300px;
-      max-width: 90%;
+    .container {
+      max-width: 400px;
+      width: 100%;
+      background-color: #2C3E50;
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .gallery img:hover {
+    .btn {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
       transform: scale(1.05);
     }
 
-    footer {
-      background: #0a0a0a;
-      color: #aaa;
+    .btn-secondary {
+      background-color: #E74C3C;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #C0392B;
+      transform: scale(1.05);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #7F8C8D;
+      background-color: #34495E;
+      color: white;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: #34495E;
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    nav button {
+      background-color: #2C3E50;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: #1ABC9C;
+    }
+
+    .header {
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+      margin-bottom: 20px;
     }
 
-    .socials a {
-      margin: 0 10px;
-      color: #aaa;
+    .header h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: #BDC3C7;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-links a {
       text-decoration: none;
+      color: #1ABC9C;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      display: block;
+      transition: color 0.3s ease;
     }
 
-    .socials a:hover {
-      color: #fff;
+    .social-links a:hover {
+      color: #16A085;
     }
   </style>
 </head>
-<body>
 
-  <!-- Hauptheader -->
-  <header>
-    <h1>🌍 Roblox RP Game – Coming Soon!</h1>
-    <p>Erlebe eine völlig neue Welt voller Abenteuer, Freundschaft und 🏠 Alltagssimulation!  
-      Am <strong>12. Mai 2025</strong> ist es soweit – starte dein Leben im ultimativen Roleplay-Game! 🚗👮‍♀️👩‍🍳</p>
-  </header>
+<body class="flex justify-center items-center min-h-screen">
 
-  <!-- Hauptinhalt -->
-  <main>
-    <h2>Was dich erwartet 💡</h2>
-    <p>👥 Triff neue Freunde & spiele gemeinsam<br>
-        🚓 Werde Polizist, Arzt oder was du willst<br>
-       🛍️ Erkunde Geschäfte, Cafés und Parks<br><br>
-       Und das alles direkt auf Roblox! ✨</p>
-
-  </main>
-
-  <!-- Sneak Peek -->
-  <section id="sneakpeek">
-    <h2>👀 Sneak Peek: Erste Einblicke!</h2>
-    <div class="gallery">
-      <!-- Beispielbild – mit direktem Link austauschen -->
-      <img src="sneakpeek1.png.png" alt="Sneak Peek: Notruf Hamburg Lamborghini">
+  <!-- Authentifizierungswahl -->
+  <div id="authChoice" class="container">
+    <div class="header">
+      <h2>Willkommen</h2>
+      <p>Bitte wähle eine Option</p>
     </div>
-  </section>
+    <button class="btn" onclick="showRegister()">Registrieren</button>
+    <button class="btn btn-secondary" onclick="showLogin()">Anmelden</button>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="socials">
-      💻 <a href="https://discord.gg/4zS3Tej3S8" target="_blank" rel="noopener noreferrer">Discord</a>
-      🎥 <a href="https://www.youtube.com/@Emergency-Niedersachsen" target="_blank" rel="noopener noreferrer">YouTube</a>
-      💬 <a href="https://www.tiktok.com/@emergency.niedersachsem" target="_blank" rel="noopener noreferrer">Tiktok</a>
+  <!-- Registrierung -->
+  <div id="registerForm" class="container hidden">
+    <div class="header">
+      <h2>Registrierung</h2>
+      <p>Erstelle dein Konto</p>
     </div>
-    <p>&copy; 2025 Emergency Niedersachsen – Roblox RP</p>
-  </footer>
+    <input type="text" id="regName" placeholder="Dein Name" required>
+    <input type="email" id="regEmail" placeholder="Deine E-Mail" required>
+    <input type="password" id="regPassword" placeholder="Passwort" required>
+    <button class="btn" onclick="registerUser()">Registrieren</button>
+  </div>
+
+  <!-- Anmeldung -->
+  <div id="loginForm" class="container hidden">
+    <div class="header">
+      <h2>Anmeldung</h2>
+      <p>Willkommen zurück</p>
+    </div>
+    <input type="email" id="loginEmail" placeholder="E-Mail" required>
+    <input type="password" id="loginPassword" placeholder="Passwort" required>
+    <button class="btn" onclick="loginUser()">Einloggen</button>
+  </div>
+
+  <!-- Hauptseite -->
+  <div id="mainSite" class="container hidden">
+    <nav>
+      <button onclick="showPage('home')">Startseite</button>
+      <button onclick="showPage('about')">Über uns</button>
+      <button onclick="showPage('social')">Social Links</button>
+    </nav>
+
+    <div id="home" class="content active">
+      <h3 class="header">Willkommen bei Emergency Niedersachsen</h3>
+      <button class="btn" onclick="toggleUnbanForm()">Entbannungsanfrage</button>
+      <div id="unbanForm" class="hidden">
+        <textarea id="reason" placeholder="Warum wurdest du gebannt?" required></textarea>
+        <textarea id="whyUnban" placeholder="Warum sollen wir dich entbannen?" required></textarea>
+        <input type="email" id="contactEmail" placeholder="Deine E-Mail" required>
+        <button class="btn" onclick="sendUnbanRequest()">Anfrage senden</button>
+      </div>
+    </div>
+
+    <div id="about" class="content">
+      <h3 class="header">Über uns</h3>
+      <p>Emergency Niedersachsen ist ein realistisches Roblox-Rollenspiel rund um Notfälle, Polizei, Feuerwehr und Rettungskräfte in Niedersachsen.</p>
+    </div>
+
+    <div id="social" class="content">
+      <h3 class="header">Social Links</h3>
+      <div class="social-links">
+        <ul>
+          <li><a href="https://discord.gg/d2neUBtfGE" target="_blank">Discord</a></li>
+          <li><a href="https://www.youtube.com/@Emergency-Niedersachsen" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    let currentUser = null;
+
+    function showRegister() {
+      document.getElementById('authChoice').classList.add('hidden');
+      document.getElementById('registerForm').classList.remove('hidden');
+    }
+
+    function showLogin() {
+      document.getElementById('authChoice').classList.add('hidden');
+      document.getElementById('loginForm').classList.remove('hidden');
+    }
+
+    function registerUser() {
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+
+      if (!name || !email || !password) {
+        alert('Bitte fülle alle Felder aus.');
+        return;
+      }
+
+      if (users[email]) {
+        alert('Diese E-Mail ist bereits registriert.');
+        return;
+      }
+
+      // Benutzer speichern
+      users[email] = { name, password };
+      localStorage.setItem('users', JSON.stringify(users));
+
+      // Registrierung erfolgreich - Direkt zur Hauptseite
+      currentUser = users[email];
+      alert('Registrierung erfolgreich!');
+      document.getElementById('registerForm').classList.add('hidden');
+      document.getElementById('mainSite').classList.remove('hidden');
+      showPage('home');
+    }
+
+    function loginUser() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        alert('Bitte fülle alle Felder aus.');
+        return;
+      }
+
+      const user = users[email];
+      if (user && user.password === password) {
+        currentUser = user;
+        alert('Login erfolgreich!');
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('mainSite').classList.remove('hidden');
+        showPage('home');
+      } else {
+        alert('Ungültige E-Mail oder Passwort.');
+      }
+    }
+
+    function showPage(page) {
+      document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+      document.getElementById(page).classList.add('active');
+    }
+
+    function toggleUnbanForm() {
+      const form = document.getElementById('unbanForm');
+      form.classList.toggle('hidden');
+    }
+
+    async function sendUnbanRequest() {
+      const reason = document.getElementById('reason').value.trim();
+      const whyUnban = document.getElementById('whyUnban').value.trim();
+      const contactEmail = document.getElementById('contactEmail').value.trim();
+
+      if (!reason || !whyUnban || !contactEmail) {
+        alert('Bitte alles ausfüllen.');
+        return;
+      }
+
+      const payload = {
+        content: `🚫 Neue Entbannungsanfrage:\n\n❓ Warum gebannt: ${reason}\n📝 Warum entbannen: ${whyUnban}\n📧 Kontakt: ${contactEmail}`
+      };
+
+      try {
+        await fetch("https://discord.com/api/webhooks/1367253977766432829/PZXe6UzvSub8jPbKq-BUR397yeJr4Z1rij4vGT_XV5Bqi5pH-XTynzS_71G2aRh5FJWl", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        alert('Anfrage erfolgreich gesendet!');
+      } catch (err) {
+        console.error(err);
+        alert('Fehler beim Senden der Anfrage.');
+      }
+    }
+  </script>
 
 </body>
-</html>
 
+</html>
