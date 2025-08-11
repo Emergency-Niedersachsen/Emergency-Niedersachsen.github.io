@@ -4,770 +4,222 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emergency Niedersachsen</title>
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Russo+One&display=swap" rel="stylesheet" />
-
 <style>
-  /* Reset */
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: 'Russo One', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    color: #f0f0f0;
-    overflow-x: hidden;
-  }
-
-  /* Background Image */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('https://cdn.wallpapersafari.com/43/27/X2v8wP.jpg') no-repeat center center/cover;
-    opacity: 0.15;
-    z-index: -1;
-    filter: brightness(0.7) contrast(1.2);
-  }
-
-  /* Navbar */
-  nav {
-    background: rgba(5,5,5,0.85);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 2px solid #00fff7;
-    box-shadow: 0 0 12px #00fff7aa;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  nav .logo {
-    font-family: 'Orbitron', monospace;
-    font-size: 1.8rem;
-    color: #00fff7;
-    text-shadow:
-      0 0 5px #00fff7,
-      0 0 10px #00fff7,
-      0 0 20px #00fff7,
-      0 0 40px #00fff7;
-    letter-spacing: 0.1em;
-  }
-  nav .nav-buttons button {
-    background: transparent;
-    border: 2px solid #00fff7;
-    color: #00fff7;
-    padding: 0.45rem 1rem;
-    margin-left: 1rem;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    font-family: 'Russo One', sans-serif;
-  }
-  nav .nav-buttons button:hover {
-    background: #00fff7;
-    color: #010101;
-    box-shadow: 0 0 12px #00fff7;
-  }
-
-  /* Container */
-  .container {
-    max-width: 900px;
-    margin: 3rem auto 4rem auto;
-    background: rgba(10,10,10,0.85);
-    padding: 2rem 3rem;
-    border-radius: 15px;
-    box-shadow: 0 0 20px #00fff7aa;
-    min-height: 400px;
-  }
-
-  /* Headings */
-  h1, h2, h3 {
-    font-family: 'Orbitron', monospace;
-    color: #00fff7;
-    margin-bottom: 1rem;
-    text-shadow:
-      0 0 8px #00fff7,
-      0 0 15px #00fff7;
-  }
-  p {
-    line-height: 1.6;
-    color: #ddd;
-    font-size: 1.1rem;
-  }
-
-  /* Buttons */
-  button.primary {
-    background-color: #00fff7;
-    border: none;
-    color: #010101;
-    padding: 0.65rem 1.4rem;
-    border-radius: 10px;
-    font-weight: 700;
-    font-family: 'Russo One', sans-serif;
-    cursor: pointer;
-    font-size: 1.05rem;
-    box-shadow:
-      0 0 10px #00fff7,
-      0 0 20px #00fff7;
-    transition: background-color 0.3s ease;
-  }
-  button.primary:hover {
-    background-color: #00d1c1;
-  }
-  button.danger {
-    background-color: #ff0040;
-    color: #fff;
-    border: none;
-    padding: 0.55rem 1.2rem;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: 'Russo One', sans-serif;
-    font-size: 1rem;
-    box-shadow: 0 0 10px #ff0040;
-    transition: background-color 0.3s ease;
-  }
-  button.danger:hover {
-    background-color: #e60039;
-  }
-
-  /* Inputs */
-  input[type=text], input[type=password], select, textarea {
-    width: 100%;
-    padding: 0.7rem 1rem;
-    margin-bottom: 1.4rem;
-    border-radius: 10px;
-    border: none;
-    background: #121212;
-    color: #00fff7;
-    font-size: 1.1rem;
-    font-family: 'Russo One', sans-serif;
-    box-shadow: inset 0 0 8px #00fff7;
-    transition: box-shadow 0.3s ease;
-  }
-  input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus {
-    outline: none;
-    box-shadow: 0 0 15px #00fff7;
-    background: #0a0a0a;
-  }
-  textarea {
-    resize: vertical;
-    min-height: 110px;
-  }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    background: #121212;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 10px #00fff7aa;
-  }
-  th, td {
-    padding: 0.9rem 1.2rem;
-    text-align: left;
-    color: #00fff7;
-    font-family: 'Russo One', sans-serif;
-  }
-  th {
-    background-color: #070707;
-    border-bottom: 2px solid #00fff7;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-  }
-  tr:not(:last-child) {
-    border-bottom: 1px solid #222;
-  }
-  tr:hover {
-    background-color: #001f1f;
-  }
-
-  /* Cards */
-  .card {
-    background: #0e0e0e;
-    padding: 1.3rem 1.5rem;
-    border-radius: 15px;
-    margin-bottom: 1.4rem;
-    box-shadow: 0 0 15px #00fff7aa;
-    font-family: 'Russo One', sans-serif;
-  }
-
-  /* Error Text */
-  .error {
-    color: #ff405a;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    font-family: 'Russo One', sans-serif;
-  }
-
-  /* Hidden */
-  .hidden {
-    display: none;
-  }
-
-  /* Links */
-  a {
-    color: #00fff7;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Social Media Footer */
-  footer {
-    background: rgba(5,5,5,0.85);
-    text-align: center;
-    padding: 1rem 0;
-    border-top: 2px solid #00fff7;
-    box-shadow: 0 0 12px #00fff7aa;
-    position: fixed;
-    bottom: 0; left: 0; width: 100%;
-    font-family: 'Russo One', sans-serif;
-    color: #00fff7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    z-index: 100;
-  }
-  footer img {
-    height: 24px;
-    width: 24px;
-  }
-  footer a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .container {
-      padding: 1.5rem 1.5rem;
-      margin: 2rem 1rem 3rem 1rem;
-    }
-    nav .nav-buttons button {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
-      margin-left: 0.6rem;
-    }
-    footer {
-      flex-direction: column;
-      gap: 4px;
-    }
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Russo+One&display=swap');
+  * { box-sizing: border-box; font-family: 'Russo One', sans-serif; }
+  body, html { margin: 0; padding: 0; background: linear-gradient(135deg,#0a0a0a,#1a1a1a); color: #f0f0f0; }
+  body::before { content:""; position:fixed; top:0; left:0; width:100%; height:100%; background: url('https://cdn.wallpapersafari.com/43/27/X2v8wP.jpg') center/cover; opacity:0.15; z-index: -1; filter: brightness(0.7) contrast(1.2);}
+  nav { background: rgba(5,5,5,0.85); display: flex; justify-content: space-between; align-items: center; padding:1rem 2rem; border-bottom:2px solid #00fff7; position: sticky; top:0; z-index: 100; }
+  nav .btn { border:2px solid #00fff7; background: transparent; color: #00fff7; padding:0.4rem 0.8rem; margin-left:1rem; cursor:pointer; border-radius:6px; transition: 0.3s; }
+  nav .btn:hover { background: #00fff7; color: #010101; }
+  .container { max-width: 800px; margin: 2rem auto 4rem; padding: 2rem; background: rgba(10,10,10,0.85); border-radius: 15px; box-shadow: 0 0 20px #00fff7; min-height: 300px;}
+  h1, h2 { color: #00fff7; margin-bottom: 1rem; }
+  .card { background: #0e0e0e; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; }
+  input, textarea, select { width:100%; padding:0.7rem; margin-bottom:0.8rem; border:none; border-radius:8px; background:#121212; color:#00fff7; }
+  button.primary { background:#00fff7; color:#010101; padding:0.6rem 1rem; border:none; border-radius:8px; cursor:pointer; }
+  button.primary:hover { background:#00d1c1; }
+  button.danger { background:#ff0040; color:#fff; padding:0.5rem 1rem; border:none; border-radius:8px; cursor:pointer; }
+  button.danger:hover { background:#e60039; }
+  .hidden { display: none; }
+  footer { background:rgba(5,5,5,0.85); text-align:center; padding:1rem; position: fixed; bottom: 0; width: 100%; display:flex; justify-content:center; align-items:center; gap:8px; color:#00fff7; }
+  footer img { height:24px; }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">EMN</div>
-  <div class="nav-buttons" id="navButtons">
-    <!-- Buttons kommen hier via JS rein -->
-  </div>
+  <div>Emergency Niedersachsen</div>
+  <div id="navButtons"></div>
 </nav>
 
-<div class="container">
-
-  <!-- Startseite -->
-  <section id="page-start">
-    <h1>Willkommen auf Emergency Niedersachsen</h1>
-    <p>Hier findest du alle Infos zum Team, News und kannst dich bewerben.</p>
-  </section>
-
-  <!-- News -->
-  <section id="page-news" class="hidden">
-    <h2>News</h2>
-    <div id="newsList" class="card">
-      <p>Keine News vorhanden.</p>
-    </div>
-
-    <!-- News posten für bestimmte Rollen -->
-    <div id="newsPostSection" class="hidden card">
-      <h3>Neue News hinzufügen</h3>
-      <textarea id="newsText" placeholder="Deine Nachricht..."></textarea>
-      <button class="primary" id="btnPostNews">Posten</button>
-    </div>
-  </section>
-
-  <!-- Bewerbung -->
-  <section id="page-apply" class="hidden">
-    <h2>Team Bewerbung</h2>
-    <form id="applicationForm" class="card">
-      <label for="applyRole">Welche Rolle möchtest du?</label>
-      <select id="applyRole" required>
-        <option value="" disabled selected>-- auswählen --</option>
-        <option value="Supporter">Supporter</option>
-        <option value="Moderator">Moderator</option>
-        <option value="Admin">Admin</option>
-        <option value="Developer">Developer</option>
-      </select>
-
-      <label for="discordName">Discord Name</label>
-      <input type="text" id="discordName" placeholder="z.B. MaxMustermann#1234" required />
-
-      <label for="reason">Warum sollen wir dich annehmen?</label>
-      <textarea id="reason" placeholder="Erkläre uns..." required></textarea>
-
-      <label for="realName">Wie heißt du?</label>
-      <input type="text" id="realName" placeholder="Dein Name" required />
-
-      <label for="serverTime">Wie lange bist du auf unserem Server? (mindestens 5 Tage)</label>
-      <input type="text" id="serverTime" placeholder="z.B. 7 Tage" required />
-
-      <div id="robloxExperienceWrapper" class="hidden">
-        <label for="robloxExperience">Hast du Erfahrung mit Roblox Studio?</label>
-        <select id="robloxExperience">
-          <option value="" disabled selected>-- auswählen --</option>
-          <option value="Ja">Ja</option>
-          <option value="Nein">Nein</option>
-        </select>
-      </div>
-
-      <label for="knowledge">Kennst du dich als <span id="selectedRoleName">...</span> aus?</label>
-      <textarea id="knowledge" placeholder="Beschreibe deine Kenntnisse..." required></textarea>
-
-      <button class="primary" type="submit">Absenden</button>
-      <p id="applicationMsg" style="margin-top:10px;"></p>
-    </form>
-  </section>
-
-  <!-- Login -->
-  <section id="page-login" class="hidden">
-    <h2>Login</h2>
-    <form id="loginForm" class="card">
-      <label for="loginUser">Benutzername</label>
-      <input type="text" id="loginUser" placeholder="Benutzername" required />
-      <label for="loginPass">Passwort</label>
-      <input type="password" id="loginPass" placeholder="Passwort" required />
-      <button class="primary" type="submit">Einloggen</button>
-      <p id="loginMsg" class="error"></p>
-    </form>
-  </section>
-
-  <!-- Dashboard (Owner, Admin, Moderator, Supporter, Developer) -->
-  <section id="page-dashboard" class="hidden">
-    <h2>Dashboard</h2>
-
-    <!-- Teamverwaltung nur für Owner -->
-    <div id="ownerTeamSection" class="hidden card">
-      <h3>Team Mitglieder verwalten</h3>
-
-      <form id="addMemberForm">
-        <label>Benutzername</label>
-        <input type="text" id="newUserName" required />
-        <label>Passwort</label>
-        <input type="password" id="newUserPass" required />
-        <label>Rolle</label>
-        <select id="newUserRole" required>
-          <option value="" disabled selected>-- auswählen --</option>
-          <option value="Owner">Owner</option>
-          <option value="Admin">Admin</option>
-          <option value="Moderator">Moderator</option>
-          <option value="Supporter">Supporter</option>
-          <option value="Developer">Developer</option>
-        </select>
-        <button class="primary" type="submit">Mitglied hinzufügen</button>
-      </form>
-
-      <h4>Team Mitglieder</h4>
-      <table id="teamTable">
-        <thead>
-          <tr><th>Benutzername</th><th>Rolle</th><th>Aktion</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <!-- News löschen nur für Owner -->
-    <div id="ownerNewsDeleteSection" class="hidden card">
-      <h3>News löschen</h3>
-      <table id="newsDeleteTable">
-        <thead>
-          <tr><th>Nachricht</th><th>Aktion</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-</div>
+<div class="container" id="app"></div>
 
 <footer>
-  <a href="https://discord.gg/emn" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="discord.gg/emn" /> discord.gg/emn
-  </a>
+  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+  discord.gg/emn
 </footer>
 
 <script>
 (() => {
-  // ----- DATEN (simuliert: In Realität per DB speichern) -----
-  // Users: username, password, role
-  let users = [
-    { username: "owner", password: "ownerpass", role: "Owner" },
-    { username: "admin1", password: "adminpass", role: "Admin" },
-    { username: "mod1", password: "modpass", role: "Moderator" },
-    { username: "support1", password: "supportpass", role: "Supporter" },
-    { username: "dev1", password: "devpass", role: "Developer" },
-  ];
+  const STORAGE_TEAM = 'emn_team';
+  const STORAGE_NEWS = 'emn_news';
+  const STORAGE_USER = 'emn_user';
+  const ALLOWED_ROLES = ['owner','admin','moderator','developer'];
 
-  // News List
-  let news = [
-    { id: 1, text: "Willkommen im Team-Portal!" }
-  ];
+  let team = JSON.parse(localStorage.getItem(STORAGE_TEAM)) || [{ username: 'owner', password: 'ownerpass', role: 'owner' }];
+  let news = JSON.parse(localStorage.getItem(STORAGE_NEWS)) || [];
+  let current = JSON.parse(sessionStorage.getItem(STORAGE_USER)) || null;
 
-  // Aktueller eingeloggter User
-  let currentUser = null;
+  const app = document.getElementById('app');
+  const nav = document.getElementById('navButtons');
 
-  // DOM Elemente
-  const navButtons = document.getElementById("navButtons");
-  const pageStart = document.getElementById("page-start");
-  const pageNews = document.getElementById("page-news");
-  const pageApply = document.getElementById("page-apply");
-  const pageLogin = document.getElementById("page-login");
-  const pageDashboard = document.getElementById("page-dashboard");
+  const saveAll = () => {
+    localStorage.setItem(STORAGE_TEAM, JSON.stringify(team));
+    localStorage.setItem(STORAGE_NEWS, JSON.stringify(news));
+  };
 
-  const loginForm = document.getElementById("loginForm");
-  const loginMsg = document.getElementById("loginMsg");
+  const setCurrent = u => {
+    current = u;
+    sessionStorage.setItem(STORAGE_USER, JSON.stringify(u));
+    render();
+  };
 
-  const newsList = document.getElementById("newsList");
-  const newsPostSection = document.getElementById("newsPostSection");
-  const newsText = document.getElementById("newsText");
-  const btnPostNews = document.getElementById("btnPostNews");
-
-  const applicationForm = document.getElementById("applicationForm");
-  const applicationMsg = document.getElementById("applicationMsg");
-  const applyRole = document.getElementById("applyRole");
-  const discordExperienceWrapper = document.getElementById("robloxExperienceWrapper");
-
-  const selectedRoleNameSpan = document.getElementById("selectedRoleName");
-  const robloxExperience = document.getElementById("robloxExperience");
-  const knowledge = document.getElementById("knowledge");
-
-  // Owner Dashboard Elements
-  const ownerTeamSection = document.getElementById("ownerTeamSection");
-  const addMemberForm = document.getElementById("addMemberForm");
-  const newUserName = document.getElementById("newUserName");
-  const newUserPass = document.getElementById("newUserPass");
-  const newUserRole = document.getElementById("newUserRole");
-  const teamTableBody = document.querySelector("#teamTable tbody");
-
-  const ownerNewsDeleteSection = document.getElementById("ownerNewsDeleteSection");
-  const newsDeleteTableBody = document.querySelector("#newsDeleteTable tbody");
-
-  // --- Funktionen ---
-
-  // Sichtbarkeit aller Seiten resetten
-  function hideAllPages() {
-    pageStart.classList.add("hidden");
-    pageNews.classList.add("hidden");
-    pageApply.classList.add("hidden");
-    pageLogin.classList.add("hidden");
-    pageDashboard.classList.add("hidden");
-  }
-
-  // Navigation Buttons je nach Login/Role updaten
-  function updateNav() {
-    navButtons.innerHTML = "";
-
-    if (!currentUser) {
-      // Nicht eingeloggt: Zeige Start, News, Bewerbung, Login
-      navButtons.appendChild(makeNavButton("Startseite", () => showPage("start")));
-      navButtons.appendChild(makeNavButton("News", () => showPage("news")));
-      navButtons.appendChild(makeNavButton("Bewerbung", () => showPage("apply")));
-      navButtons.appendChild(makeNavButton("Login", () => showPage("login")));
-    } else {
-      // Eingeloggt: Zeige Start, News, Bewerbung, Dashboard, Logout
-      navButtons.appendChild(makeNavButton("Startseite", () => showPage("start")));
-      navButtons.appendChild(makeNavButton("News", () => showPage("news")));
-      navButtons.appendChild(makeNavButton("Bewerbung", () => showPage("apply")));
-      navButtons.appendChild(makeNavButton("Dashboard", () => showPage("dashboard")));
-      navButtons.appendChild(makeNavButton("Logout", logout));
-    }
-  }
-
-  // Erzeugt Button DOM Element mit Text + Callback
-  function makeNavButton(text, onClick) {
-    const btn = document.createElement("button");
+  const navBtn = (text, action) => {
+    const btn = document.createElement('button');
+    btn.className = 'btn';
     btn.textContent = text;
-    btn.addEventListener("click", onClick);
+    btn.onclick = action;
     return btn;
-  }
+  };
 
-  // Seiten wechseln
-  function showPage(name) {
-    hideAllPages();
-    switch (name) {
-      case "start": pageStart.classList.remove("hidden"); break;
-      case "news": pageNews.classList.remove("hidden"); break;
-      case "apply": pageApply.classList.remove("hidden"); break;
-      case "login": pageLogin.classList.remove("hidden"); break;
-      case "dashboard": pageDashboard.classList.remove("hidden"); break;
+  function renderNav() {
+    nav.innerHTML = '';
+    nav.appendChild(navBtn('Start', () => show('start')));
+    nav.appendChild(navBtn('News', () => show('news')));
+    nav.appendChild(navBtn('Bewerben', () => show('apply')));
+
+    if (current) {
+      if (ALLOWED_ROLES.includes(current.role)) nav.appendChild(navBtn('News erstellen', () => show('addnews')));
+      if (current.role === 'owner') nav.appendChild(navBtn('Team verwalten', () => show('team')));
+      nav.appendChild(navBtn('Logout', () => { sessionStorage.removeItem(STORAGE_USER); current = null; render(); }));
+    } else {
+      nav.appendChild(navBtn('Login', () => show('login')));
     }
   }
 
-  // News rendern
+  function show(page) {
+    const pages = { start: renderStart, news: renderNews, addnews: renderAddNews, team: renderTeam, apply: renderApply, login: renderLogin };
+    app.innerHTML = '';
+    (pages[page] || renderStart)();
+  }
+
+  function renderStart() {
+    app.innerHTML = `<h1>Startseite</h1><p>Willkommen bei Emergency Niedersachsen!</p>`;
+  }
+
   function renderNews() {
+    let html = '<h2>News</h2>';
     if (news.length === 0) {
-      newsList.innerHTML = "<p>Keine News vorhanden.</p>";
-      newsDeleteTableBody.innerHTML = "";
-      return;
-    }
-    // News anzeigen in News-Liste (für alle)
-    newsList.innerHTML = "";
-    news.forEach(n => {
-      const p = document.createElement("p");
-      p.textContent = n.text;
-      p.style.borderBottom = "1px solid #00fff7";
-      p.style.padding = "0.4rem 0";
-      newsList.appendChild(p);
-    });
-
-    // News löschen Tabelle nur für Owner
-    if (currentUser && currentUser.role === "Owner") {
-      newsDeleteTableBody.innerHTML = "";
-      news.forEach(n => {
-        const tr = document.createElement("tr");
-        const tdText = document.createElement("td");
-        tdText.textContent = n.text;
-        const tdAction = document.createElement("td");
-        const btnDel = document.createElement("button");
-        btnDel.textContent = "Löschen";
-        btnDel.className = "danger";
-        btnDel.addEventListener("click", () => {
-          deleteNews(n.id);
-        });
-        tdAction.appendChild(btnDel);
-        tr.appendChild(tdText);
-        tr.appendChild(tdAction);
-        newsDeleteTableBody.appendChild(tr);
-      });
-    }
-  }
-
-  // News posten
-  function postNews() {
-    const txt = newsText.value.trim();
-    if (!txt) {
-      alert("Bitte eine Nachricht eingeben!");
-      return;
-    }
-    // Neue News mit neuer id
-    const newId = news.length ? Math.max(...news.map(n => n.id)) + 1 : 1;
-    news.unshift({ id: newId, text: txt });
-    newsText.value = "";
-    renderNews();
-    alert("News wurde gepostet.");
-  }
-
-  // News löschen
-  function deleteNews(id) {
-    if (!confirm("Willst du diese News wirklich löschen?")) return;
-    news = news.filter(n => n.id !== id);
-    renderNews();
-  }
-
-  // Bewerbung - zeigt robloxExperience nur wenn Rolle Developer ist
-  applyRole.addEventListener("change", () => {
-    const val = applyRole.value;
-    selectedRoleNameSpan.textContent = val || "...";
-    if (val === "Developer") {
-      discordExperienceWrapper.classList.remove("hidden");
-      robloxExperience.setAttribute("required", "required");
+      html += '<p>Keine News vorhanden.</p>';
     } else {
-      discordExperienceWrapper.classList.add("hidden");
-      robloxExperience.removeAttribute("required");
-    }
-  });
-
-  // Bewerbung absenden
-  applicationForm.addEventListener("submit", e => {
-    e.preventDefault();
-
-    // Validierung Mindestdauer auf Server (mind. 5 Tage)
-    const daysMatch = document.getElementById("serverTime").value.match(/\d+/);
-    if (!daysMatch || Number(daysMatch[0]) < 5) {
-      applicationMsg.textContent = "Du musst mindestens 5 Tage auf dem Server sein!";
-      applicationMsg.style.color = "#ff405a";
-      return;
-    }
-
-    const payload = {
-      role: applyRole.value,
-      discordName: document.getElementById("discordName").value.trim(),
-      reason: document.getElementById("reason").value.trim(),
-      realName: document.getElementById("realName").value.trim(),
-      serverTime: document.getElementById("serverTime").value.trim(),
-      robloxExperience: robloxExperience.value || "N/A",
-      knowledge: knowledge.value.trim()
-    };
-
-    // Webhook URL hier eintragen
-    const webhookURL = "https://discord.com/api/webhooks/1404585053068984493/G62yUYGKKXiCyYXNmv15ntJrBfUjAzFbWHtI7K-lKQgKew92qINaenaODBlEc9EBDZrY";
-
-    // Discord Webhook Format
-    const content = `**Neue Team Bewerbung**\n
-**Rolle:** ${payload.role}
-**Discord Name:** ${payload.discordName}
-**Warum:** ${payload.reason}
-**Name:** ${payload.realName}
-**Serverzeit:** ${payload.serverTime}
-**Roblox Studio Erfahrung:** ${payload.robloxExperience}
-**Kenntnisse:** ${payload.knowledge}`;
-
-    fetch(webhookURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ content }),
-    })
-      .then(res => {
-        if (res.ok) {
-          applicationMsg.textContent = "Bewerbung erfolgreich gesendet!";
-          applicationMsg.style.color = "#00ff9f";
-          applicationForm.reset();
-          selectedRoleNameSpan.textContent = "...";
-          discordExperienceWrapper.classList.add("hidden");
-        } else {
-          throw new Error("Fehler beim Senden");
+      news.sort((a,b) => b.date.localeCompare(a.date)).forEach(n => {
+        html += `<div class="card"><p>${n.text}</p><small>${n.author} – ${new Date(n.date).toLocaleString()}</small>`;
+        if (current && current.role === 'owner') {
+          html += ` <button class="danger" onclick="delNews(${n.id})">Löschen</button>`;
         }
-      })
-      .catch(() => {
-        applicationMsg.textContent = "Fehler beim Senden der Bewerbung!";
-        applicationMsg.style.color = "#ff405a";
+        html += '</div>';
       });
-  });
-
-  // Login
-  loginForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const user = document.getElementById("loginUser").value.trim();
-    const pass = document.getElementById("loginPass").value;
-
-    const found = users.find(u => u.username === user && u.password === pass);
-    if (!found) {
-      loginMsg.textContent = "Benutzername oder Passwort falsch!";
-      return;
     }
-    currentUser = { ...found };
-    loginMsg.textContent = "";
-    updateNav();
-    showPage("start");
+    app.innerHTML = html;
+  }
+
+  window.delNews = id => {
+    news = news.filter(n => n.id !== id);
+    saveAll();
     renderNews();
-    setupDashboard();
-  });
+  };
 
-  // Logout
-  function logout() {
-    if (!confirm("Willst du dich wirklich ausloggen?")) return;
-    currentUser = null;
-    updateNav();
-    showPage("start");
-    newsPostSection.classList.add("hidden");
-    ownerTeamSection.classList.add("hidden");
-    ownerNewsDeleteSection.classList.add("hidden");
+  function renderAddNews() {
+    if (!current || !ALLOWED_ROLES.includes(current.role)) return renderNews();
+    app.innerHTML = `
+      <h2>News erstellen</h2>
+      <div class="card">
+        <textarea id="nt" placeholder="Text eingeben"></textarea>
+        <button class="primary" onclick="addNews()">Posten</button>
+      </div>`;
   }
 
-  // Dashboard anzeigen je nach Rolle
-  function setupDashboard() {
-    if (!currentUser) return;
+  window.addNews = () => {
+    const txt = document.getElementById('nt').value.trim();
+    if (txt === '') return alert('Text darf nicht leer sein!');
+    news.unshift({ id: Date.now(), text: txt, author: current.username, date: new Date().toISOString() });
+    saveAll();
+    show('news');
+  };
 
-    // News Post nur für Rollen: Owner, Admin, Moderator, Supporter, Developer
-    const canPostNews = ["Owner", "Admin", "Moderator", "Supporter", "Developer"].includes(currentUser.role);
-    if (canPostNews) {
-      newsPostSection.classList.remove("hidden");
-    } else {
-      newsPostSection.classList.add("hidden");
-    }
-
-    // Teamverwaltung nur Owner
-    if (currentUser.role === "Owner") {
-      ownerTeamSection.classList.remove("hidden");
-      ownerNewsDeleteSection.classList.remove("hidden");
-      renderTeamTable();
-      renderNews();
-    } else {
-      ownerTeamSection.classList.add("hidden");
-      ownerNewsDeleteSection.classList.add("hidden");
-    }
+  function renderTeam() {
+    if (!current || current.role !== 'owner') return renderStart();
+    const rows = team.filter(u => u.username !== 'owner')
+                     .map(u => `<tr><td>${u.username}</td><td>${u.role}</td><td><button class="danger" onclick="kick('${u.username}')">Kicken</button></td></tr>`).join('');
+    app.innerHTML = `
+      <h2>Teamverwaltung</h2>
+      <div class="card">
+        <input id="nu" placeholder="Benutzername"/>
+        <input id="pw" placeholder="Passwort"/>
+        <select id="rl">${ALLOWED_ROLES.filter(r => r !== 'owner').map(r => `<option>${r}</option>`).join('')}</select>
+        <button class="primary" onclick="addUser()">Hinzufügen</button>
+      </div>
+      <table>${rows}</table>`;
   }
 
-  // Team Tabelle rendern
-  function renderTeamTable() {
-    teamTableBody.innerHTML = "";
-    users.forEach((u, i) => {
-      const tr = document.createElement("tr");
-      const tdUser = document.createElement("td");
-      tdUser.textContent = u.username;
-      const tdRole = document.createElement("td");
-      tdRole.textContent = u.role;
-      const tdAction = document.createElement("td");
+  window.kick = name => {
+    team = team.filter(u => u.username !== name);
+    saveAll();
+    renderTeam();
+  };
 
-      if (u.username !== currentUser.username) {
-        const btnKick = document.createElement("button");
-        btnKick.textContent = "Kicken";
-        btnKick.className = "danger";
-        btnKick.addEventListener("click", () => {
-          if (confirm(`Willst du ${u.username} wirklich kicken?`)) {
-            users.splice(i, 1);
-            renderTeamTable();
-          }
-        });
-        tdAction.appendChild(btnKick);
-      } else {
-        tdAction.textContent = "-";
-      }
+  window.addUser = () => {
+    const u = document.getElementById('nu').value.trim();
+    const p = document.getElementById('pw').value;
+    const r = document.getElementById('rl').value;
+    if (!u || !p) return alert('Felder ausfüllen!');
+    if (team.some(t => t.username === u)) return alert('Existiert schon!');
+    team.push({ username: u, password: p, role: r });
+    saveAll();
+    renderTeam();
+  };
 
-      tr.appendChild(tdUser);
-      tr.appendChild(tdRole);
-      tr.appendChild(tdAction);
-      teamTableBody.appendChild(tr);
-    });
+  function renderApply() {
+    app.innerHTML = `
+      <h2>Bewerbung</h2>
+      <div class="card">
+        <form onsubmit="return sendApp(event)">
+          <input id="ar" placeholder="Rolle" required/>
+          <input id="dn" placeholder="Discord" required/>
+          <textarea id="why" placeholder="Warum?" required></textarea>
+          <button class="primary" type="submit">Absenden</button>
+        </form>
+      </div>`;
   }
 
-  // Neues Mitglied hinzufügen
-  addMemberForm.addEventListener("submit", e => {
+  window.sendApp = e => {
     e.preventDefault();
-    const username = newUserName.value.trim();
-    const password = newUserPass.value;
-    const role = newUserRole.value;
+    const r = document.getElementById('ar').value.trim();
+    const d = document.getElementById('dn').value.trim();
+    const w = document.getElementById('why').value.trim();
+    const url = "DEINE_WEBHOOK_URL";
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: ` Bewerbung: Rolle: ${r}, Discord: ${d}, Warum: ${w}` })
+    }).then(_=> alert('Gesendet'));
+    show('start');
+    return false;
+  };
 
-    if (!username || !password || !role) {
-      alert("Bitte alle Felder ausfüllen.");
-      return;
-    }
-    if (users.some(u => u.username === username)) {
-      alert("Benutzername existiert bereits!");
-      return;
-    }
-    users.push({ username, password, role });
-    alert(`Mitglied ${username} mit Rolle ${role} hinzugefügt.`);
-    newUserName.value = "";
-    newUserPass.value = "";
-    newUserRole.value = "";
-    renderTeamTable();
-  });
+  function renderLogin() {
+    app.innerHTML = `
+      <h2>Login</h2>
+      <div class="card">
+        <input id="lu" placeholder="Benutzer"/><input id="lp" type="password" placeholder="Passwort"/>
+        <button class="primary" onclick="doLogin()">Einloggen</button>
+      </div>`;
+  }
 
-  // News posten Button Event
-  btnPostNews.addEventListener("click", postNews);
+  window.doLogin = () => {
+    const u = document.getElementById('lu').value.trim();
+    const p = document.getElementById('lp').value;
+    const usr = team.find(x => x.username === u && x.password === p);
+    if (!usr) return alert('Falsch!');
+    setCurrent(usr);
+  };
 
-  // Initial Setup
-  updateNav();
-  showPage("start");
-  renderNews();
+  function render() {
+    renderNav();
+    show('start');
+  }
 
+  render();
 })();
 </script>
 
