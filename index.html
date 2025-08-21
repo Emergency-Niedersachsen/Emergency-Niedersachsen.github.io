@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webseite Offline</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -17,30 +17,38 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Montserrat', sans-serif;
       color: white;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
       border-radius: 20px;
-      padding: 40px 60px;
+      padding: 50px 70px;
       text-align: center;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(25px);
+      box-shadow: 0 0 60px rgba(255, 255, 255, 0.08), 0 0 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
     }
 
-    .card h1 {
+    .card:hover {
+      box-shadow: 0 0 80px rgba(255, 255, 255, 0.15), 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
       font-size: 3rem;
-      font-weight: 500;
-      margin-bottom: 15px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ffdde1, #ee9ca7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .card p {
+    p {
       font-size: 1.2rem;
-      font-weight: 300;
+      font-weight: 400;
       color: #ddd;
     }
 
@@ -49,11 +57,11 @@
         padding: 30px 20px;
       }
 
-      .card h1 {
+      h1 {
         font-size: 2rem;
       }
 
-      .card p {
+      p {
         font-size: 1rem;
       }
     }
@@ -62,7 +70,7 @@
 <body>
   <div class="card">
     <h1>🚧 Die Webseite ist Offline!</h1>
-    <p>Wir arbeiten daran. Bitte schauen Sie später nochmal vorbei.</p>
+    <p>Wir arbeiten im Hintergrund. Bitte versuchen Sie es später noch einmal.</p>
   </div>
 </body>
 </html>
