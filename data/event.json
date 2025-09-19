@@ -1,23 +1,16 @@
 [
   {
-    "title": "Nachtsammelaktion",
-    "date": "2025-09-26 20:00",
-    "status": "Open",
+    "title": "TT Live",
+    "date": "2025-20-09 15:00",
+    "status": "Closed",
     "img": "https://via.placeholder.com/120x80?text=Event+Preview",
     "joinLink": "https://discord.com/events/123456789"
   },
   {
-    "title": "Tag der Rettung",
-    "date": "2025-10-03 18:00",
-    "status": "Closed",
-    "img": "https://via.placeholder.com/120x80?text=Event+Preview",
-    "joinLink": "https://discord.com/events/987654321"
-  },
-  {
-    "title": "Community Live-Stream",
-    "date": "2025-10-10 20:00",
+    "title": "Community Event",
+    "date": "2025-19-09 18:45",
     "status": "Open",
-    "img": "https://via.placeholder.com/120x80?text=Event+Preview",
-    "joinLink": "https://discord.com/events/555555555"
+    "img": "https://cdn.discordapp.com/attachments/1418612478568435742/1418614028254838884/upscaled_2160x2160_1-pica.jpg?ex=68cec2c4&is=68cd7144&hm=b17cd46bfcfb53e74f4571bf83242aab7f5c2c8a088b7cb9240b092ecb3b92fd&",
+    "joinLink": "https://discord.gg/xsRJtq9f"
   }
 ]
