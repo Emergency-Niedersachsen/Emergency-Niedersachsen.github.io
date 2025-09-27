@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Tunnel",
+    "desc": "Unser Neuer Tunnel ist fast fertig!",
+    "img": "/static/images/sneaks/tunnel.png"
+  },
+  {
+    "title": "Vip Lounge",
+    "desc": "Unsere Neue VIP Lounge für den Club ist eröffnet!(50 rbx)",
+    "img": "/static/images/sneaks/vip-lounge.png"
+  },
+  {
+    "title": "ADAC",
+    "desc": "Kurzer Einblick für unseren ADAC Service!",
+    "img": "/static/images/sneaks/adac.png"
+  }
+]
